@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TechConnect</title>
+    <meta name="description" content="Discover and connect with tech professionals">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="dashboard.html" class="navbar-logo">
+                <i class="fas fa-code"></i> TechConnect
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="dashboard.html" class="navbar-link" style="color: var(--primary-color);">
+                        <i class="fas fa-fire"></i> Discover
+                    </a></li>
+                <li><a href="matches.html" class="navbar-link">
+                        <i class="fas fa-heart"></i> Matches <span class="badge badge-primary" id="matchCount">3</span>
+                    </a></li>
+                <li><a href="messages.html" class="navbar-link">
+                        <i class="fas fa-comments"></i> Messages <span class="badge badge-primary"
+                            id="messageCount">2</span>
+                    </a></li>
+                <li><a href="profile.html" class="navbar-link">
+                        <i class="fas fa-user"></i> Profile
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div style="min-height: 100vh; padding: 100px 20px 40px;">
+        <div class="container" style="max-width: 1400px;">
+
+            <!-- Welcome Section -->
+            <div style="margin-bottom: 2rem;">
+                <h1 style="margin-bottom: 0.5rem;">Discover Your Match</h1>
+                <p style="color: var(--text-secondary); font-size: 1.125rem;">
+                    Swipe through verified tech professionals in your area
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 400px; gap: 2rem; align-items: start;">
+
+                <!-- Card Stack -->
+                <div style="position: relative; min-height: 600px;">
+                    <div id="cardStack" style="position: relative; width: 100%; max-width: 500px; margin: 0 auto;">
+                        <!-- Cards will be dynamically inserted here -->
+                    </div>
+
+                    <!-- No More Cards Message -->
+                    <div id="noMoreCards" class="hidden" style="text-align: center; padding: 4rem 2rem;">
+                        <div
+                            style="width: 120px; height: 120px; background: var(--bg-glass); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 3rem;">
+                            <i class="fas fa-check-circle" style="color: var(--success-color);"></i>
+                        </div>
+                        <h2 style="margin-bottom: 1rem;">You're All Caught Up!</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                            Check back later for more matches, or adjust your preferences to see more profiles.
+                        </p>
+                        <button class="btn btn-primary" id="adjustPreferences">
+                            <i class="fas fa-sliders-h"></i> Adjust Preferences
+                        </button>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div id="actionButtons"
+                        style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem;">
+                        <button class="btn" id="passBtn"
+                            style="width: 70px; height: 70px; border-radius: 50%; background: transparent; border: 3px solid var(--border-color); padding: 0;">
+                            <i class="fas fa-times" style="font-size: 2rem; color: var(--warning-color);"></i>
+                        </button>
+                        <button class="btn" id="superLikeBtn"
+                            style="width: 60px; height: 60px; border-radius: 50%; background: transparent; border: 3px solid var(--border-color); padding: 0;">
+                            <i class="fas fa-star" style="font-size: 1.5rem; color: var(--accent-color);"></i>
+                        </button>
+                        <button class="btn" id="likeBtn"
+                            style="width: 70px; height: 70px; border-radius: 50%; background: transparent; border: 3px solid var(--border-color); padding: 0;">
+                            <i class="fas fa-heart" style="font-size: 2rem; color: var(--success-color);"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div>
+                    <!-- Profile Completion -->
+                    <div class="glass-card" style="margin-bottom: 1.5rem;">
+                        <div
+                            style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.125rem; margin: 0;">Profile Strength</h3>
+                            <span style="color: var(--success-color); font-weight: 600;">85%</span>
+                        </div>
+                        <div
+                            style="height: 8px; background: var(--bg-tertiary); border-radius: var(--radius-full); overflow: hidden; margin-bottom: 1rem;">
+                            <div
+                                style="height: 100%; background: var(--success-gradient); width: 85%; transition: width 0.3s ease;">
+                            </div>
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                            Complete your profile to get better matches!
+                        </p>
+                        <button class="btn btn-outline" style="width: 100%; font-size: 0.875rem;">
+                            <i class="fas fa-edit"></i> Complete Profile
+                        </button>
+                    </div>
+
+                    <!-- Today's Stats -->
+                    <div class="glass-card" style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.125rem; margin-bottom: 1.5rem;">Today's Activity</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div
+                                        style="width: 40px; height: 40px; background: rgba(67, 233, 123, 0.2); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-heart" style="color: var(--success-color);"></i>
+                                    </div>
+                                    <span style="color: var(--text-secondary);">Likes Sent</span>
+                                </div>
+                                <span style="font-weight: 600; font-size: 1.25rem;">12</span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div
+                                        style="width: 40px; height: 40px; background: rgba(102, 126, 234, 0.2); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-fire" style="color: var(--primary-color);"></i>
+                                    </div>
+                                    <span style="color: var(--text-secondary);">Matches</span>
+                                </div>
+                                <span style="font-weight: 600; font-size: 1.25rem;">3</span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                    <div
+                                        style="width: 40px; height: 40px; background: rgba(79, 172, 254, 0.2); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-eye" style="color: var(--accent-color);"></i>
+                                    </div>
+                                    <span style="color: var(--text-secondary);">Profile Views</span>
+                                </div>
+                                <span style="font-weight: 600; font-size: 1.25rem;">28</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Tips -->
+                    <div class="glass-card">
+                        <h3 style="font-size: 1.125rem; margin-bottom: 1rem;">
+                            <i class="fas fa-lightbulb" style="color: var(--accent-color);"></i> Quick Tip
+                        </h3>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary);">
+                            Profiles with verified LinkedIn accounts get 3x more matches. Verify yours today!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Match Modal -->
+    <div id="matchModal" class="modal-overlay hidden">
+        <div class="modal" style="max-width: 600px; text-align: center;">
+            <div class="modal-body" style="padding: 3rem 2rem;">
+                <div style="font-size: 4rem; margin-bottom: 1rem; animation: pulse 1s ease infinite;">
+                    🎉
+                </div>
+                <h2
+                    style="margin-bottom: 1rem; background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    It's a Match!
+                </h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    You and <span id="matchName" style="color: var(--text-primary); font-weight: 600;"></span> liked
+                    each other!
+                </p>
+
+                <div
+                    style="display: flex; gap: 1rem; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <img id="userAvatar" class="avatar avatar-xl" src="" alt="Your avatar">
+                    <div style="font-size: 2rem;">
+                        <i class="fas fa-heart" style="color: var(--warning-color);"></i>
+                    </div>
+                    <img id="matchAvatar" class="avatar avatar-xl" src="" alt="Match avatar">
+                </div>
+
+                <div style="display: flex; gap: 1rem;">
+                    <button class="btn btn-outline" style="flex: 1;" id="keepSwipingBtn">
+                        Keep Swiping
+                    </button>
+                    <button class="btn btn-primary" style="flex: 1;" id="sendMessageBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

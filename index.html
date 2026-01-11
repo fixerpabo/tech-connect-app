@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechConnect - Where Tech Professionals Connect</title>
+  <meta name="description" content="The premium dating platform exclusively for tech professionals. Verify your profile with LinkedIn or X and connect with like-minded individuals.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <i class="fas fa-code"></i> TechConnect
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="#features" class="navbar-link">Features</a></li>
+        <li><a href="#how-it-works" class="navbar-link">How It Works</a></li>
+        <li><a href="#" class="btn btn-ghost" id="loginBtn">Login</a></li>
+        <li><a href="#" class="btn btn-primary" id="signupBtn">Get Started</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Where Tech Minds <br>Connect & Spark
+      </h1>
+      <p class="hero-subtitle">
+        The exclusive dating platform for verified tech professionals. 
+        Connect with software engineers, designers, product managers, and innovators who speak your language.
+      </p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" id="heroSignupBtn">
+          <i class="fas fa-rocket"></i> Start Your Journey
+        </button>
+        <button class="btn btn-outline" id="learnMoreBtn">
+          <i class="fas fa-play-circle"></i> Learn More
+        </button>
+      </div>
+      
+      <!-- Trust Indicators -->
+      <div style="margin-top: 3rem; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; opacity: 0.7;">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <i class="fas fa-shield-alt" style="color: var(--success-color);"></i>
+          <span style="font-size: 0.875rem;">LinkedIn Verified</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <i class="fas fa-lock" style="color: var(--success-color);"></i>
+          <span style="font-size: 0.875rem;">100% Secure</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <i class="fas fa-users" style="color: var(--success-color);"></i>
+          <span style="font-size: 0.875rem;">10,000+ Members</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" style="padding: 6rem 0; background: var(--bg-secondary);">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 4rem;">
+        <h2>Why Tech Professionals Choose Us</h2>
+        <p style="font-size: 1.125rem; max-width: 600px; margin: 0 auto;">
+          Built by engineers, for engineers. We understand what matters to you.
+        </p>
+      </div>
+      
+      <div class="grid grid-3">
+        <!-- Feature 1 -->
+        <div class="glass-card">
+          <div style="width: 60px; height: 60px; background: var(--primary-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <i class="fab fa-linkedin" style="font-size: 1.75rem;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Verified Profiles</h3>
+          <p>Connect your LinkedIn or X account to verify your professional identity. No catfishing, no fake profiles.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass-card">
+          <div style="width: 60px; height: 60px; background: var(--secondary-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <i class="fas fa-brain" style="font-size: 1.75rem;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Smart Matching</h3>
+          <p>Our algorithm considers tech stack, interests, career goals, and personality to find your perfect match.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass-card">
+          <div style="width: 60px; height: 60px; background: var(--accent-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <i class="fas fa-comments" style="font-size: 1.75rem;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Meaningful Conversations</h3>
+          <p>Start conversations with icebreakers about coding, tech trends, or your favorite programming languages.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass-card">
+          <div style="width: 60px; height: 60px; background: var(--success-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <i class="fas fa-user-shield" style="font-size: 1.75rem;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Privacy First</h3>
+          <p>Your data is encrypted and secure. Control who sees your profile and what information you share.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="glass-card">
+          <div style="width: 60px; height: 60px; background: var(--primary-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <i class="fas fa-calendar-check" style="font-size: 1.75rem;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Virtual & IRL Events</h3>
+          <p>Join exclusive meetups, hackathons, and social events designed for tech professionals.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="glass-card">
+          <div style="width: 60px; height: 60px; background: var(--secondary-gradient); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+            <i class="fas fa-code-branch" style="font-size: 1.75rem;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Tech Stack Matching</h3>
+          <p>Filter by programming languages, frameworks, and technologies. Find someone who gets your passion for React or Rust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" style="padding: 6rem 0;">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 4rem;">
+        <h2>Get Started in 3 Simple Steps</h2>
+        <p style="font-size: 1.125rem;">Join thousands of tech professionals finding meaningful connections</p>
+      </div>
+      
+      <div class="grid grid-3">
+        <!-- Step 1 -->
+        <div style="text-align: center;">
+          <div style="width: 80px; height: 80px; background: var(--primary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; font-weight: 800; box-shadow: var(--shadow-glow);">
+            1
+          </div>
+          <h3 style="margin-bottom: 1rem;">Create Your Profile</h3>
+          <p>Sign up and verify your account with LinkedIn or X. Add your tech stack, interests, and what you're looking for.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="text-align: center;">
+          <div style="width: 80px; height: 80px; background: var(--secondary-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; font-weight: 800; box-shadow: var(--shadow-glow);">
+            2
+          </div>
+          <h3 style="margin-bottom: 1rem;">Discover Matches</h3>
+          <p>Browse profiles of verified tech professionals. Our smart algorithm suggests the best matches based on compatibility.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="text-align: center;">
+          <div style="width: 80px; height: 80px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem; font-weight: 800; box-shadow: var(--shadow-glow);">
+            3
+          </div>
+          <h3 style="margin-bottom: 1rem;">Start Connecting</h3>
+          <p>Like profiles, send messages, and meet amazing people who share your passion for technology.</p>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 3rem;">
+        <button class="btn btn-primary" id="ctaSignupBtn">
+          <i class="fas fa-user-plus"></i> Create Your Profile Now
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="padding: 6rem 0; background: var(--bg-secondary); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-gradient); opacity: 0.05;"></div>
+    <div class="container text-center" style="position: relative; z-index: 1;">
+      <h2 style="margin-bottom: 1.5rem;">Ready to Find Your Tech Soulmate?</h2>
+      <p style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Join the community where tech professionals find love, friendship, and meaningful connections.
+      </p>
+      <button class="btn btn-primary" id="finalCtaBtn" style="font-size: 1.125rem; padding: 1.125rem 2.5rem;">
+        <i class="fas fa-heart"></i> Join TechConnect Today
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding: 3rem 0; background: var(--bg-primary); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+        <div>
+          <div class="navbar-logo" style="margin-bottom: 1rem;">
+            <i class="fas fa-code"></i> TechConnect
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.875rem;">
+            Where tech professionals connect and spark.
+          </p>
+        </div>
+        <div>
+          <h4 style="font-size: 1rem; margin-bottom: 1rem;">Product</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">Features</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">Pricing</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">Success Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 1rem; margin-bottom: 1rem;">Company</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">About</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">Blog</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 1rem; margin-bottom: 1rem;">Legal</h4>
+          <ul style="list-style: none;">
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">Privacy Policy</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">Terms of Service</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#" style="color: var(--text-muted); font-size: 0.875rem;">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-muted); font-size: 0.875rem;">
+        <p>&copy; 2026 TechConnect. All rights reserved. Made with <i class="fas fa-heart" style="color: var(--warning-color);"></i> for tech professionals.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Welcome Back!</h3>
+        <button class="modal-close" id="closeLoginModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" class="form-input" placeholder="your.email@tech.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password" required>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" id="rememberMe">
+              <span style="font-size: 0.875rem; color: var(--text-secondary);">Remember me</span>
+            </label>
+            <a href="#" style="font-size: 0.875rem;">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fas fa-sign-in-alt"></i> Login
+          </button>
+        </form>
+        
+        <div style="margin: 1.5rem 0; text-align: center; color: var(--text-muted);">
+          <span>or continue with</span>
+        </div>
+        
+        <div style="display: flex; gap: 1rem;">
+          <button class="btn btn-outline" style="flex: 1;">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </button>
+          <button class="btn btn-outline" style="flex: 1;">
+            <i class="fab fa-x-twitter"></i> X
+          </button>
+        </div>
+        
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+          Don't have an account? <a href="#" id="switchToSignup" style="color: var(--primary-color); font-weight: 600;">Sign up</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Join TechConnect</h3>
+        <button class="modal-close" id="closeSignupModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm">
+          <div class="form-group">
+            <label class="form-label" for="signupName">Full Name</label>
+            <input type="text" id="signupName" class="form-input" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupEmail">Email</label>
+            <input type="email" id="signupEmail" class="form-input" placeholder="your.email@tech.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" class="form-input" placeholder="Create a strong password" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signupRole">Your Role</label>
+            <select id="signupRole" class="form-select" required>
+              <option value="">Select your role</option>
+              <option value="software-engineer">Software Engineer</option>
+              <option value="frontend-developer">Frontend Developer</option>
+              <option value="backend-developer">Backend Developer</option>
+              <option value="fullstack-developer">Full Stack Developer</option>
+              <option value="mobile-developer">Mobile Developer</option>
+              <option value="devops-engineer">DevOps Engineer</option>
+              <option value="data-scientist">Data Scientist</option>
+              <option value="ml-engineer">ML Engineer</option>
+              <option value="product-manager">Product Manager</option>
+              <option value="ui-ux-designer">UI/UX Designer</option>
+              <option value="tech-lead">Tech Lead</option>
+              <option value="engineering-manager">Engineering Manager</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 1.5rem;">
+            <label style="display: flex; align-items: start; gap: 0.5rem; cursor: pointer;">
+              <input type="checkbox" id="agreeTerms" required style="margin-top: 0.25rem;">
+              <span style="font-size: 0.875rem; color: var(--text-secondary);">
+                I agree to the <a href="#" style="color: var(--primary-color);">Terms of Service</a> and <a href="#" style="color: var(--primary-color);">Privacy Policy</a>
+              </span>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fas fa-user-plus"></i> Create Account
+          </button>
+        </form>
+        
+        <div style="margin: 1.5rem 0; text-align: center; color: var(--text-muted);">
+          <span>or sign up with</span>
+        </div>
+        
+        <div style="display: flex; gap: 1rem;">
+          <button class="btn btn-outline" style="flex: 1;" id="linkedinSignup">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </button>
+          <button class="btn btn-outline" style="flex: 1;" id="xSignup">
+            <i class="fab fa-x-twitter"></i> X
+          </button>
+        </div>
+        
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+          Already have an account? <a href="#" id="switchToLogin" style="color: var(--primary-color); font-weight: 600;">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - TechConnect</title>
+    <meta name="description" content="Manage your TechConnect profile">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-header {
+            position: relative;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+            margin-bottom: 2rem;
+        }
+
+        .profile-avatar-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .avatar-edit-btn {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+
+        .avatar-edit-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(67, 233, 123, 0.2);
+            color: var(--success-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .profile-section {
+            margin-bottom: 2rem;
+        }
+
+        .profile-section-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .profile-section-title i {
+            color: var(--primary-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition-base);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tech-tag {
+            background: rgba(102, 126, 234, 0.2);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .settings-list {
+            list-style: none;
+        }
+
+        .settings-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .settings-item:hover {
+            background: var(--bg-glass);
+            margin: 0 -1rem;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+        }
+
+        .settings-item:last-child {
+            border-bottom: none;
+        }
+
+        .settings-item-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .settings-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 26px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+
+        .toggle-switch.active {
+            background: var(--primary-gradient);
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            transition: var(--transition-base);
+        }
+
+        .toggle-switch.active::after {
+            left: 27px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="dashboard.html" class="navbar-logo">
+                <i class="fas fa-code"></i> TechConnect
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="dashboard.html" class="navbar-link">
+                        <i class="fas fa-fire"></i> Discover
+                    </a></li>
+                <li><a href="matches.html" class="navbar-link">
+                        <i class="fas fa-heart"></i> Matches
+                    </a></li>
+                <li><a href="messages.html" class="navbar-link">
+                        <i class="fas fa-comments"></i> Messages
+                    </a></li>
+                <li><a href="profile.html" class="navbar-link" style="color: var(--primary-color);">
+                        <i class="fas fa-user"></i> Profile
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <div class="profile-header">
+        <div class="container text-center">
+            <div class="profile-avatar-container">
+                <div class="profile-avatar" id="profileAvatar">
+                    <span id="avatarInitial">?</span>
+                </div>
+                <button class="avatar-edit-btn" id="editAvatarBtn">
+                    <i class="fas fa-camera"></i>
+                </button>
+            </div>
+            <h1 style="margin-bottom: 0.25rem;" id="profileName">Loading...</h1>
+            <p style="color: var(--text-secondary); font-size: 1.125rem;" id="profileRole">Loading...</p>
+            <div class="verified-badge" id="verifiedBadge" style="display: none;">
+                <i class="fas fa-check-circle"></i> LinkedIn Verified
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="padding: 0 20px 60px;">
+        <div class="container" style="max-width: 900px;">
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="statLikes">47</div>
+                    <div class="stat-label">Likes Received</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="statMatches">12</div>
+                    <div class="stat-label">Matches</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="statViews">156</div>
+                    <div class="stat-label">Profile Views</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="statScore">92</div>
+                    <div class="stat-label">Match Score</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <!-- Left Column -->
+                <div>
+                    <!-- About Section -->
+                    <div class="glass-card profile-section">
+                        <h3 class="profile-section-title">
+                            <i class="fas fa-user"></i> About Me
+                        </h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;" id="profileBio">
+                            Loading bio...
+                        </p>
+                        <button class="btn btn-outline" style="margin-top: 1rem; width: 100%;" id="editBioBtn">
+                            <i class="fas fa-edit"></i> Edit Bio
+                        </button>
+                    </div>
+
+                    <!-- Tech Stack Section -->
+                    <div class="glass-card profile-section">
+                        <h3 class="profile-section-title">
+                            <i class="fas fa-code"></i> Tech Stack
+                        </h3>
+                        <div class="tech-tags" id="techStackTags">
+                            <!-- Tech tags will be inserted here -->
+                        </div>
+                        <button class="btn btn-outline" style="margin-top: 1.5rem; width: 100%;" id="editTechBtn">
+                            <i class="fas fa-plus"></i> Add Skills
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div>
+                    <!-- Info Section -->
+                    <div class="glass-card profile-section">
+                        <h3 class="profile-section-title">
+                            <i class="fas fa-info-circle"></i> Profile Info
+                        </h3>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Company</div>
+                                <div class="info-value" id="profileCompany">-</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Location</div>
+                                <div class="info-value" id="profileLocation">-</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Experience</div>
+                                <div class="info-value" id="profileExperience">-</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <div class="info-label">Email</div>
+                                <div class="info-value" id="profileEmail">-</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Section -->
+                    <div class="glass-card profile-section">
+                        <h3 class="profile-section-title">
+                            <i class="fas fa-cog"></i> Settings
+                        </h3>
+                        <ul class="settings-list">
+                            <li class="settings-item" id="notificationToggle">
+                                <div class="settings-item-left">
+                                    <div class="settings-icon">
+                                        <i class="fas fa-bell"></i>
+                                    </div>
+                                    <span>Push Notifications</span>
+                                </div>
+                                <div class="toggle-switch active"></div>
+                            </li>
+                            <li class="settings-item" id="profileVisibilityToggle">
+                                <div class="settings-item-left">
+                                    <div class="settings-icon">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <span>Profile Visibility</span>
+                                </div>
+                                <div class="toggle-switch active"></div>
+                            </li>
+                            <li class="settings-item" id="darkModeToggle">
+                                <div class="settings-item-left">
+                                    <div class="settings-icon">
+                                        <i class="fas fa-moon"></i>
+                                    </div>
+                                    <span>Dark Mode</span>
+                                </div>
+                                <div class="toggle-switch active"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                <button class="btn btn-outline" style="flex: 1;" id="editProfileBtn">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+                <button class="btn btn-primary" style="flex: 1;" id="verifyProfileBtn">
+                    <i class="fab fa-linkedin"></i> Verify Profile
+                </button>
+            </div>
+
+            <!-- Logout Button -->
+            <button class="btn"
+                style="width: 100%; margin-top: 1.5rem; background: rgba(245, 87, 108, 0.2); color: var(--warning-color); border: 1px solid var(--warning-color);"
+                id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+
+</html>
+</CodeContent>
+<parameter name="EmptyFile">false
