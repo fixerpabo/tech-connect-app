@@ -1,6 +1,6 @@
 # TechConnect - Dating App for Tech Professionals
 
-A premium dating platform exclusively for verified tech professionals. Connect with software engineers, designers, product managers, and innovators who speak your language.
+A premium connect  xclusively for verified tech professionals. Connect with software engineers, designers, product managers, and innovators who speak your language.
 
 ## 🚀 Features
 

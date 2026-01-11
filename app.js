@@ -97,74 +97,106 @@ learnMoreBtn?.addEventListener('click', () => {
 // Form Submissions
 loginForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  
+
   const email = document.getElementById('loginEmail').value;
   const password = document.getElementById('loginPassword').value;
   const rememberMe = document.getElementById('rememberMe').checked;
-  
+
   // Show loading state
   const submitBtn = loginForm.querySelector('button[type="submit"]');
   const originalText = submitBtn.innerHTML;
   submitBtn.innerHTML = '<div class="spinner" style="width: 20px; height: 20px; border-width: 2px;"></div>';
   submitBtn.disabled = true;
-  
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1500));
-  
-  // Store user data (in a real app, this would be handled by backend)
-  const userData = {
-    email,
-    name: email.split('@')[0],
-    verified: false
-  };
-  
-  localStorage.setItem('techconnect_user', JSON.stringify(userData));
-  if (rememberMe) {
-    localStorage.setItem('techconnect_remember', 'true');
-  }
-  
-  state.currentUser = userData;
-  state.isAuthenticated = true;
-  
-  // Reset button
-  submitBtn.innerHTML = originalText;
-  submitBtn.disabled = false;
-  
-  // Close modal and redirect to dashboard
+
+  // Simulate API call for initial credentials check
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
+  // Close login modal and show X Auth Modal
   closeModal(loginModal);
-  
-  // Show success message
-  showNotification('Welcome back! Redirecting to your dashboard...', 'success');
-  
-  // Redirect to dashboard after a short delay
-  setTimeout(() => {
-    window.location.href = 'dashboard.html';
-  }, 1500);
+
+  // Create and show X Auth Modal
+  const xAuthModal = document.createElement('div');
+  xAuthModal.className = 'modal-overlay';
+  xAuthModal.id = 'xAuthModal';
+  xAuthModal.innerHTML = `
+    <div class="modal" style="max-width: 400px; text-align: center;">
+      <div class="modal-body" style="padding: 3rem 2rem;">
+        <div style="font-size: 3rem; margin-bottom: 1.5rem; color: #1DA1F2;">
+            <i class="fab fa-x-twitter"></i>
+        </div>
+        <h2 style="margin-bottom: 1rem;">X Authorization Required</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+            To ensure the authenticity of our community, we require all users to verify their identity via X (formerly Twitter) for every login.
+        </p>
+        <button id="authorizeXBtn" class="btn btn-primary" style="width: 100%; background: #000; color: #fff;">
+            <i class="fab fa-x-twitter"></i> Authorize with X
+        </button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(xAuthModal);
+
+  // Handle X Auth
+  const authBtn = document.getElementById('authorizeXBtn');
+  authBtn.addEventListener('click', async () => {
+    const originalBtnText = authBtn.innerHTML;
+    authBtn.innerHTML = '<div class="spinner" style="width: 20px; height: 20px; border-width: 2px; border-color: #fff; border-top-color: transparent;"></div> Authorizing...';
+    authBtn.disabled = true;
+
+    // Simulate X Auth delay
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // User Data
+    const userData = {
+      email,
+      name: email.split('@')[0],
+      verified: true // Verified via X
+    };
+
+    localStorage.setItem('techconnect_user', JSON.stringify(userData));
+    if (rememberMe) {
+      localStorage.setItem('techconnect_remember', 'true');
+    }
+
+    state.currentUser = userData;
+    state.isAuthenticated = true;
+
+    // Remove modal
+    xAuthModal.remove();
+
+    // Show success
+    showNotification('X Authorization Successful! Welcome back.', 'success');
+
+    // Redirect
+    setTimeout(() => {
+      window.location.href = 'dashboard.html';
+    }, 1000);
+  });
 });
 
 signupForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  
+
   const name = document.getElementById('signupName').value;
   const email = document.getElementById('signupEmail').value;
   const password = document.getElementById('signupPassword').value;
   const role = document.getElementById('signupRole').value;
   const agreeTerms = document.getElementById('agreeTerms').checked;
-  
+
   if (!agreeTerms) {
     showNotification('Please agree to the Terms of Service and Privacy Policy', 'error');
     return;
   }
-  
+
   // Show loading state
   const submitBtn = signupForm.querySelector('button[type="submit"]');
   const originalText = submitBtn.innerHTML;
   submitBtn.innerHTML = '<div class="spinner" style="width: 20px; height: 20px; border-width: 2px;"></div>';
   submitBtn.disabled = true;
-  
+
   // Simulate API call
   await new Promise(resolve => setTimeout(resolve, 2000));
-  
+
   // Store user data
   const userData = {
     name,
@@ -173,21 +205,21 @@ signupForm?.addEventListener('submit', async (e) => {
     verified: false,
     createdAt: new Date().toISOString()
   };
-  
+
   localStorage.setItem('techconnect_user', JSON.stringify(userData));
   state.currentUser = userData;
   state.isAuthenticated = true;
-  
+
   // Reset button
   submitBtn.innerHTML = originalText;
   submitBtn.disabled = false;
-  
+
   // Close modal
   closeModal(signupModal);
-  
+
   // Show success message
   showNotification('Account created successfully! Redirecting to profile setup...', 'success');
-  
+
   // Redirect to profile setup
   setTimeout(() => {
     window.location.href = 'profile-setup.html';
@@ -214,7 +246,7 @@ function showNotification(message, type = 'info') {
   if (existingNotification) {
     existingNotification.remove();
   }
-  
+
   const notification = document.createElement('div');
   notification.className = 'notification';
   notification.style.cssText = `
@@ -231,7 +263,7 @@ function showNotification(message, type = 'info') {
     max-width: 400px;
     font-weight: 500;
   `;
-  
+
   const icon = type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ';
   notification.innerHTML = `
     <div style="display: flex; align-items: center; gap: 0.75rem;">
@@ -239,9 +271,9 @@ function showNotification(message, type = 'info') {
       <span>${message}</span>
     </div>
   `;
-  
+
   document.body.appendChild(notification);
-  
+
   // Auto remove after 4 seconds
   setTimeout(() => {
     notification.style.animation = 'slideOutRight 0.3s ease';
@@ -255,7 +287,7 @@ function checkAuth() {
   if (userData) {
     state.currentUser = JSON.parse(userData);
     state.isAuthenticated = true;
-    
+
     // Update UI if on landing page
     if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
       updateNavForAuthUser();
@@ -273,7 +305,7 @@ function updateNavForAuthUser() {
       <li><a href="profile.html" class="btn btn-ghost">Profile</a></li>
       <li><a href="#" class="btn btn-primary" id="logoutBtn">Logout</a></li>
     `;
-    
+
     document.getElementById('logoutBtn')?.addEventListener('click', (e) => {
       e.preventDefault();
       logout();
@@ -312,7 +344,7 @@ const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
-  
+
   if (currentScroll > 100) {
     navbar.style.background = 'rgba(10, 10, 15, 0.95)';
     navbar.style.boxShadow = 'var(--shadow-md)';
@@ -320,7 +352,7 @@ window.addEventListener('scroll', () => {
     navbar.style.background = 'rgba(10, 10, 15, 0.8)';
     navbar.style.boxShadow = 'none';
   }
-  
+
   lastScroll = currentScroll;
 });
 

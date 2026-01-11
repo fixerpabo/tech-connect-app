@@ -139,11 +139,208 @@ const mockProfiles = [
     distance: 11,
     avatarGradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
     interests: ['City Exploration', 'Architecture', 'Coffee']
+  },
+  {
+    id: 11,
+    name: 'Nina Patel',
+    age: 29,
+    role: 'Blockchain Developer',
+    company: 'Coinbase',
+    location: 'San Francisco, CA',
+    bio: 'Decentralizing the future. Passionate about Web3, smart contracts, and cryptography. Looking for someone who understands HODL isn\'t just a typo.',
+    techStack: ['Solidity', 'Rust', 'Web3.js', 'Ethereum'],
+    verified: true,
+    distance: 10,
+    avatarGradient: 'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)',
+    interests: ['Crypto', 'DeFi', 'Snowboarding']
+  },
+  {
+    id: 12,
+    name: 'David Lee',
+    age: 27,
+    role: 'Game Developer',
+    company: 'Unity',
+    location: 'San Francisco, CA',
+    bio: 'Creating immersive worlds. Love physics simulations and shaders. Looking for a player 2 to co-op through life.',
+    techStack: ['C#', 'Unity', 'C++', 'OpenGL'],
+    verified: true,
+    distance: 8,
+    avatarGradient: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)',
+    interests: ['Gaming', 'VR', 'Sci-Fi']
+  },
+  {
+    id: 13,
+    name: 'Sophie Martin',
+    age: 30,
+    role: 'SRE',
+    company: 'Datadog',
+    location: 'San Francisco, CA',
+    bio: 'Keeping the lights on. Obsessed with uptime and observability. Dealing with incidents is my day job, hoping our connection won\'t be one.',
+    techStack: ['Go', 'Kubernetes', 'Terraform', 'Datadog'],
+    verified: true,
+    distance: 14,
+    avatarGradient: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)',
+    interests: ['Hiking', 'Photography', 'Gardening']
+  },
+  {
+    id: 14,
+    name: 'James Wilson',
+    age: 34,
+    role: 'Engineering Manager',
+    company: 'LinkedIn',
+    location: 'Sunnyvale, CA',
+    bio: 'People over code. Love mentoring, building teams, and solving complex organizational problems. Looking for a partner to share life\'s roadmap.',
+    techStack: ['Leadership', 'Management', 'Agile', 'Strategy'],
+    verified: true,
+    distance: 20,
+    avatarGradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    interests: ['Leadership', 'Mentoring', 'Cooking']
+  },
+  {
+    id: 15,
+    name: 'Elena Popova',
+    age: 26,
+    role: 'Android Developer',
+    company: 'Square',
+    location: 'San Francisco, CA',
+    bio: 'Mobile-first mindset. Kotlin enthusiast and UI perfectionist. Love salsa dancing and spicy food.',
+    techStack: ['Kotlin', 'Android', 'Compose', 'Java'],
+    verified: true,
+    distance: 5,
+    avatarGradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    interests: ['Dancing', 'Travel', 'Food']
+  },
+  {
+    id: 16,
+    name: 'Michael Chang',
+    age: 28,
+    role: 'Frontend Engineer',
+    company: 'Airbnb',
+    location: 'San Francisco, CA',
+    bio: 'Crafting pixel-perfect experiences. Accessibility advocate and design system nerd. Looking for someone to explore art galleries with.',
+    techStack: ['React', 'TypeScript', 'CSS', 'A11y'],
+    verified: true,
+    distance: 2,
+    avatarGradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+    interests: ['Art', 'Design', 'Architecture']
+  },
+  {
+    id: 17,
+    name: 'Rachel Green',
+    age: 25,
+    role: 'QA Engineer',
+    company: 'Zoom',
+    location: 'San Jose, CA',
+    bio: 'Breaking things so you don\'t have to. Detail-oriented and process-driven. Love puzzles and escape rooms.',
+    techStack: ['Selenium', 'Cypress', 'Python', 'Jenkins'],
+    verified: true,
+    distance: 18,
+    avatarGradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    interests: ['Puzzles', 'Escape Rooms', 'Reading']
+  },
+  {
+    id: 18,
+    name: 'Thomas Anderson',
+    age: 31,
+    role: 'Software Architect',
+    company: 'Oracle',
+    location: 'Redwood City, CA',
+    bio: 'Seeing the matrix. Designing scalable and resilient systems. Love philosophy and martial arts.',
+    techStack: ['Java', 'Cloud', 'Microservices', 'System Design'],
+    verified: true,
+    distance: 15,
+    avatarGradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    interests: ['Martial Arts', 'Philosophy', 'Sci-Fi']
+  },
+  {
+    id: 19,
+    name: 'Jessica Lee',
+    age: 27,
+    role: 'UX Researcher',
+    company: 'Pinterest',
+    location: 'San Francisco, CA',
+    bio: 'Understanding the "why". Love talking to users and uncovering insights. Empathetic listener seeking a deep connection.',
+    techStack: ['User Research', 'Usability Testing', 'Psychology', 'Figma'],
+    verified: true,
+    distance: 6,
+    avatarGradient: 'linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)',
+    interests: ['Psychology', 'People Watching', 'Yoga']
+  },
+  {
+    id: 20,
+    name: 'Kevin Park',
+    age: 29,
+    role: 'Full Stack Engineer',
+    company: 'Notion',
+    location: 'San Francisco, CA',
+    bio: 'Building tools for thought. Productivity nerd and keyboard enthusiast. Looking for someone to optimize life with.',
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'Redis'],
+    verified: true,
+    distance: 4,
+    avatarGradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+    interests: ['Keyboards', 'Productivity', 'Cycling']
+  },
+  {
+    id: 21,
+    name: 'Amara Singh',
+    age: 26,
+    role: 'Developer Advocate',
+    company: 'Vercel',
+    location: 'Remote / SF',
+    bio: 'Building community and content. Love public speaking and teaching. Extrovert looking for an adventure buddy.',
+    techStack: ['Next.js', 'React', 'Content', 'Community'],
+    verified: true,
+    distance: 1,
+    avatarGradient: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)',
+    interests: ['Speaking', 'Travel', 'Blogging']
+  },
+  {
+    id: 22,
+    name: 'Daniel Cohen',
+    age: 32,
+    role: 'Data Engineer',
+    company: 'Snowflake',
+    location: 'San Mateo, CA',
+    bio: 'Pipelines and warehouses. Love clean data and efficient queries. avid runner and coffee snob.',
+    techStack: ['Python', 'SQL', 'Spark', 'Airflow'],
+    verified: true,
+    distance: 20,
+    avatarGradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+    interests: ['Running', 'Coffee', 'Hiking']
+  },
+  {
+    id: 23,
+    name: 'Grace Kim',
+    age: 28,
+    role: 'Cybersecurity Analyst',
+    company: 'Palo Alto Networks',
+    location: 'Santa Clara, CA',
+    bio: 'Defending the network. Paranoid by trade, optimist by nature. Love mystery novels and baking.',
+    techStack: ['Security', 'Network', 'Forensics', 'Python'],
+    verified: true,
+    distance: 25,
+    avatarGradient: 'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)',
+    interests: ['Reading', 'Baking', 'Mystery']
+  },
+  {
+    id: 24,
+    name: 'Samir Patel',
+    age: 30,
+    role: 'Product Designer',
+    company: 'DoorDash',
+    location: 'San Francisco, CA',
+    bio: 'Solving problems with design. Love clean lines and intuitive interfaces. Foodie looking for a dining companion.',
+    techStack: ['Figma', 'Prototyping', 'Design Systems', 'UI/UX'],
+    verified: true,
+    distance: 5,
+    avatarGradient: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)',
+    interests: ['Food', 'Design', 'Travel']
   }
 ];
 
 let currentProfileIndex = 0;
 let cardStack = [];
+let isDraggingCard = false; // Global flag to prevent multiple drags
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -158,11 +355,6 @@ function checkAuth() {
     window.location.href = 'index.html';
     return;
   }
-
-  const user = JSON.parse(userData);
-  if (!user.profileComplete) {
-    window.location.href = 'profile-setup.html';
-  }
 }
 
 async function loadProfiles() {
@@ -172,22 +364,45 @@ async function loadProfiles() {
   cardStackContainer.innerHTML = '<div class="flex-center" style="min-height: 600px;"><div class="spinner"></div></div>';
 
   // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  await new Promise(resolve => setTimeout(resolve, 800));
 
   // Clear loading
   cardStackContainer.innerHTML = '';
 
-  // Create cards
+  // Create cards in reverse order so first index is on top visually via appendChild
+  // But we want index 0 to be top. 
+  // z-index should be higher for lower index.
   mockProfiles.forEach((profile, index) => {
     const card = createProfileCard(profile, index);
     cardStackContainer.appendChild(card);
     cardStack.push(card);
   });
 
-  // Show top card
-  if (cardStack.length > 0) {
-    cardStack[0].style.display = 'block';
-    setupCardInteraction(cardStack[0], mockProfiles[0]);
+  // Make top card visible
+  updateVisibleCards();
+}
+
+function updateVisibleCards() {
+  const cardStackContainer = document.getElementById('cardStack');
+
+  // Hide all
+  cardStack.forEach(c => c.style.display = 'none');
+
+  // Show current
+  if (currentProfileIndex < cardStack.length) {
+    const currentCard = cardStack[currentProfileIndex];
+    currentCard.style.display = 'block';
+    currentCard.style.zIndex = '100';
+    setupCardInteraction(currentCard, mockProfiles[currentProfileIndex]);
+
+    // Pre-load next card behind it for smoothness
+    if (currentProfileIndex + 1 < cardStack.length) {
+      const nextCard = cardStack[currentProfileIndex + 1];
+      nextCard.style.display = 'block';
+      nextCard.style.zIndex = '90';
+      nextCard.style.transform = 'scale(0.95) translateY(10px)';
+      nextCard.style.opacity = '0.5';
+    }
   }
 }
 
@@ -206,16 +421,17 @@ function createProfileCard(profile, index) {
     box-shadow: var(--shadow-lg);
     cursor: grab;
     display: none;
-    z-index: ${mockProfiles.length - index};
     border: 3px solid transparent;
+    transform-origin: 50% 100%;
+    will-change: transform, opacity;
   `;
 
   card.innerHTML = `
     <!-- Like/Nope Indicators -->
-    <div class="swipe-indicator like-indicator" style="position: absolute; top: 30px; left: 30px; z-index: 10; opacity: 0; transform: rotate(-20deg); padding: 0.75rem 1.5rem; border: 4px solid var(--success-color); border-radius: var(--radius-md); color: var(--success-color); font-size: 2rem; font-weight: 800; text-transform: uppercase; transition: opacity 0.2s ease;">
+    <div class="swipe-indicator like-indicator" style="position: absolute; top: 40px; left: 20px; z-index: 10; opacity: 0; transform: rotate(-20deg); padding: 0.5rem 1rem; border: 4px solid var(--success-color); border-radius: var(--radius-md); color: var(--success-color); font-size: 2rem; font-weight: 800; text-transform: uppercase; transition: opacity 0.1s ease;">
       LIKE
     </div>
-    <div class="swipe-indicator nope-indicator" style="position: absolute; top: 30px; right: 30px; z-index: 10; opacity: 0; transform: rotate(20deg); padding: 0.75rem 1.5rem; border: 4px solid var(--warning-color); border-radius: var(--radius-md); color: var(--warning-color); font-size: 2rem; font-weight: 800; text-transform: uppercase; transition: opacity 0.2s ease;">
+    <div class="swipe-indicator nope-indicator" style="position: absolute; top: 40px; right: 20px; z-index: 10; opacity: 0; transform: rotate(20deg); padding: 0.5rem 1rem; border: 4px solid var(--warning-color); border-radius: var(--radius-md); color: var(--warning-color); font-size: 2rem; font-weight: 800; text-transform: uppercase; transition: opacity 0.1s ease;">
       NOPE
     </div>
     
@@ -233,7 +449,7 @@ function createProfileCard(profile, index) {
       <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem;">
         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
           <h2 style="margin: 0; font-size: 2rem;">${profile.name}, ${profile.age}</h2>
-          ${profile.verified ? '<i class="fas fa-check-circle" style="color: var(--accent-color); font-size: 1.5rem;"></i>' : ''}
+          ${profile.verified ? '<i class="fas fa-check-circle" style="color: var(--accent-color); font-size: 1.5rem;" title="Verified Profile"></i>' : ''}
         </div>
         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
           <i class="fas fa-briefcase" style="color: var(--text-secondary);"></i>
@@ -246,13 +462,13 @@ function createProfileCard(profile, index) {
       </div>
       
       <!-- Info Button -->
-      <button class="info-btn" style="position: absolute; bottom: 2rem; right: 2rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-base);">
+      <button class="info-btn" style="position: absolute; bottom: 2rem; right: 2rem; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition-base); z-index: 20;">
         <i class="fas fa-chevron-down" style="font-size: 1.25rem; transition: transform 0.3s ease;"></i>
       </button>
     </div>
     
     <!-- Expandable Details Section -->
-    <div class="card-details" style="padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;">
+    <div class="card-details" style="padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; background: var(--bg-tertiary);">
       <div style="padding: 2rem;">
         <!-- About -->
         <div style="margin-bottom: 1.5rem;">
@@ -295,43 +511,56 @@ function createProfileCard(profile, index) {
 }
 
 function setupCardInteraction(card, profile) {
+  if (card.dataset.interactionsSetup === 'true') return;
+
   let startX = 0;
   let currentX = 0;
-  let isDragging = false;
+  let localIsDragging = false;
 
   const infoBtn = card.querySelector('.info-btn');
   const cardDetails = card.querySelector('.card-details');
   let detailsExpanded = false;
 
+  // Info Button Toggle
   infoBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
+    e.stopPropagation(); // Stop bubbling to drag handlers
+    e.preventDefault();
     detailsExpanded = !detailsExpanded;
     cardDetails.style.maxHeight = detailsExpanded ? '500px' : '0';
-    infoBtn.style.transform = detailsExpanded ? 'rotate(180deg)' : 'rotate(0)';
+    infoBtn.querySelector('i').style.transform = detailsExpanded ? 'rotate(180deg)' : 'rotate(0)';
   });
 
+  // Mouse/Touch Events
   card.addEventListener('mousedown', handleStart);
   card.addEventListener('touchstart', handleStart);
 
   function handleStart(e) {
+    // Stop if clicking buttons
     if (e.target.closest('.info-btn') || e.target.closest('.card-details')) return;
 
-    isDragging = true;
+    // Prevent default only on touch to stop scrolling, but let mouse click work
+    if (e.type === 'touchstart') e.preventDefault();
+
+    localIsDragging = true;
+    isDraggingCard = true;
     card.style.cursor = 'grabbing';
+    card.style.transition = 'none'; // Disable transition for direct 1:1 movement
+
     startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
 
     document.addEventListener('mousemove', handleMove);
-    document.addEventListener('touchmove', handleMove);
+    document.addEventListener('touchmove', handleMove, { passive: false });
     document.addEventListener('mouseup', handleEnd);
     document.addEventListener('touchend', handleEnd);
   }
 
   function handleMove(e) {
-    if (!isDragging) return;
+    if (!localIsDragging) return;
+    if (e.type === 'touchmove') e.preventDefault(); // Prevent scrolling
 
     currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
     const deltaX = currentX - startX;
-    const rotation = deltaX / 20;
+    const rotation = deltaX * 0.1; // Smoother rotation
 
     card.style.transform = `translateX(${deltaX}px) rotate(${rotation}deg)`;
 
@@ -339,43 +568,48 @@ function setupCardInteraction(card, profile) {
     const likeIndicator = card.querySelector('.like-indicator');
     const nopeIndicator = card.querySelector('.nope-indicator');
 
-    // Show like/pass indicators based on swipe direction
-    if (deltaX > 50) {
-      card.style.borderColor = 'var(--success-color)';
-      if (likeIndicator) likeIndicator.style.opacity = Math.min((deltaX - 50) / 100, 1);
+    // Show indicators and border
+    if (deltaX > 20) {
+      const opacity = Math.min((deltaX - 20) / 100, 1);
+      if (likeIndicator) likeIndicator.style.opacity = opacity;
       if (nopeIndicator) nopeIndicator.style.opacity = 0;
-    } else if (deltaX < -50) {
-      card.style.borderColor = 'var(--warning-color)';
-      if (nopeIndicator) nopeIndicator.style.opacity = Math.min((-deltaX - 50) / 100, 1);
+      card.style.borderColor = `rgba(67, 233, 123, ${opacity})`;
+    } else if (deltaX < -20) {
+      const opacity = Math.min((-deltaX - 20) / 100, 1);
+      if (nopeIndicator) nopeIndicator.style.opacity = opacity;
       if (likeIndicator) likeIndicator.style.opacity = 0;
+      card.style.borderColor = `rgba(245, 87, 108, ${opacity})`;
     } else {
-      card.style.borderColor = 'transparent';
       if (likeIndicator) likeIndicator.style.opacity = 0;
       if (nopeIndicator) nopeIndicator.style.opacity = 0;
+      card.style.borderColor = 'transparent';
     }
   }
 
   function handleEnd() {
-    if (!isDragging) return;
+    if (!localIsDragging) return;
 
-    isDragging = false;
+    localIsDragging = false;
+    isDraggingCard = false;
     card.style.cursor = 'grab';
+    card.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)'; // Add springy return
 
     const deltaX = currentX - startX;
 
-    if (Math.abs(deltaX) > 100) {
-      // Swipe action
-      if (deltaX > 0) {
+    // Threshold to swipe
+    if (Math.abs(deltaX) > 120) {
+      const isLike = deltaX > 0;
+      if (isLike) {
         handleLike(profile);
       } else {
         handlePass(profile);
       }
-      removeCard(card, deltaX > 0);
+      removeCard(card, isLike);
     } else {
-      // Reset card
+      // Reset position
       card.style.transform = '';
       card.style.borderColor = 'transparent';
-      // Reset indicators
+
       const likeIndicator = card.querySelector('.like-indicator');
       const nopeIndicator = card.querySelector('.nope-indicator');
       if (likeIndicator) likeIndicator.style.opacity = 0;
@@ -387,27 +621,29 @@ function setupCardInteraction(card, profile) {
     document.removeEventListener('mouseup', handleEnd);
     document.removeEventListener('touchend', handleEnd);
   }
+
+  card.dataset.interactionsSetup = 'true';
 }
 
 function setupEventListeners() {
   document.getElementById('likeBtn').addEventListener('click', () => {
-    if (currentProfileIndex < mockProfiles.length) {
+    if (currentProfileIndex < mockProfiles.length && !isDraggingCard) {
       handleLike(mockProfiles[currentProfileIndex]);
       removeCard(cardStack[currentProfileIndex], true);
     }
   });
 
   document.getElementById('passBtn').addEventListener('click', () => {
-    if (currentProfileIndex < mockProfiles.length) {
+    if (currentProfileIndex < mockProfiles.length && !isDraggingCard) {
       handlePass(mockProfiles[currentProfileIndex]);
       removeCard(cardStack[currentProfileIndex], false);
     }
   });
 
   document.getElementById('superLikeBtn').addEventListener('click', () => {
-    if (currentProfileIndex < mockProfiles.length) {
+    if (currentProfileIndex < mockProfiles.length && !isDraggingCard) {
       handleSuperLike(mockProfiles[currentProfileIndex]);
-      removeCard(cardStack[currentProfileIndex], true);
+      removeCard(cardStack[currentProfileIndex], true); // Treat as like
     }
   });
 
@@ -423,42 +659,47 @@ function setupEventListeners() {
 function handleLike(profile) {
   console.log('Liked:', profile.name);
 
-  // Simulate match (30% chance)
-  if (Math.random() > 0.7) {
+  // Simulate match (40% chance)
+  if (Math.random() > 0.6) {
     showMatchModal(profile);
   } else {
-    showNotification(`You liked ${profile.name}!`, 'success');
+    showNotification(`Liked ${profile.name}`, 'success');
   }
+
+  // Track stats (mock)
+  updateStats('likes');
 }
 
 function handlePass(profile) {
   console.log('Passed:', profile.name);
-  showNotification('Passed', 'info');
+  // showNotification('Passed', 'info'); // Too noisy
 }
 
 function handleSuperLike(profile) {
   console.log('Super liked:', profile.name);
-  showNotification(`Super liked ${profile.name}! 🌟`, 'success');
+  showNotification(`Super Liked ${profile.name}! 🌟`, 'success');
 
-  // Higher chance of match with super like
-  if (Math.random() > 0.5) {
-    setTimeout(() => showMatchModal(profile), 500);
+  // Higher probability match
+  if (Math.random() > 0.3) {
+    setTimeout(() => showMatchModal(profile), 800);
   }
 }
 
 function removeCard(card, isLike) {
   const direction = isLike ? 1 : -1;
-  card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
-  card.style.transform = `translateX(${direction * 1000}px) rotate(${direction * 30}deg)`;
+
+  // We already set transition in handleEnd, but if triggered by buttons we need it here
+  card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease';
+  card.style.transform = `translateX(${direction * window.innerWidth}px) rotate(${direction * 45}deg)`;
   card.style.opacity = '0';
 
   setTimeout(() => {
-    card.remove();
+    card.style.display = 'none'; // Hide it completely
+
     currentProfileIndex++;
 
     if (currentProfileIndex < cardStack.length) {
-      cardStack[currentProfileIndex].style.display = 'block';
-      setupCardInteraction(cardStack[currentProfileIndex], mockProfiles[currentProfileIndex]);
+      updateVisibleCards();
     } else {
       showNoMoreCards();
     }
@@ -482,7 +723,7 @@ function showMatchModal(profile) {
   userAvatar.src = 'data:image/svg+xml,' + encodeURIComponent(`
     <svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
       <circle cx="60" cy="60" r="60" fill="#667eea"/>
-      <text x="60" y="75" font-size="48" fill="white" text-anchor="middle" font-family="Arial">You</text>
+      <text x="60" y="75" font-size="48" fill="white" text-anchor="middle" font-family="Arial">Me</text>
     </svg>
   `);
 
@@ -495,12 +736,20 @@ function showMatchModal(profile) {
 
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
+
+  // Confetti effect could go here
+  updateStats('matches');
 }
 
 function closeMatchModal() {
   const modal = document.getElementById('matchModal');
   modal.classList.add('hidden');
   document.body.style.overflow = 'auto';
+}
+
+function updateStats(type) {
+  // This would typically communicate with a backend or update localStorage
+  // For now we just animate the counters if they exist
 }
 
 function showNotification(message, type = 'info') {
